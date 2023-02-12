@@ -69,13 +69,4 @@ gsap.to('.text-right-animate ', {
     x: 0,
     duration: 1,
     delay: 0,
-});
-
-// git remote add origin https://github.com/MyCode07/yan-2.git
-// git branch - M main
-// git push - u origin main
-
-
-
-
-
+}); 
