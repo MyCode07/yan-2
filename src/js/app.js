@@ -1,62 +1,37 @@
-import Swiper from 'swiper/bundle';
-import Parallax from 'parallax-js';
-import gsap from "gsap";
-
-let mouse = document.querySelector('.mouse');
-let mouse2 = document.querySelector('.mouse2');
-document.addEventListener("mousemove", function (e) {
-    mouse.style.cssText = mouse2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
-});
-
-
-document.addEventListener('click', (e) => {
-    let burger = document.querySelector('.header__burger');
-    if (e.target === burger) {
-        burger.classList.toggle('_active');
-        document.querySelector('.header__toolbar-nav').classList.toggle('_active');
-    } else {
-        burger.classList.remove('_active');
-        document.querySelector('.header__toolbar-nav').classList.remove('_active');
-    }
-});
+// import './utils/splitText.js';
+// import './utils/footer.js';
+// import './utils/scrollIntoview.js';
+// import './utils/smoothscroll.js';
+// import './utils/menu.js';
+// import './utils/to-top.js';
+// import './utils/form.js';
+// import './utils/inputmask.js';
+import './utils/gsapTo.js';
 
 
-var scene = document.getElementById('scene');
-var parallaxInstance = new Parallax(scene);
+let sendBtn = document.querySelector('.btn-flip');
 
-const myText = new SplitType('#my-text');
+if (sendBtn) {
+    sendBtn.addEventListener('click', () => {
+        console.log('aaaaaa');
+        sendBtn.classList.toggle("_send-ok");
+    })
+}
 
-gsap.to('.char', {
-    y: 0,
-    stagger: 0.05,
-    delay: 0.1,
-    duration: 0.1,
-    opacity: 1,
 
-})
-gsap.to('#top', {
-    y: 0,
-    opacity: 1,
-    duration: 0.5,
-})
-gsap.to('#socialmedia', {
-    x: 0,
-    opacity: 1,
-    duration: 0.5,
-    visibility: 'visible',
-})
-gsap.to('#main-text-animate', {
-    x: 0,
-    opacity: 1,
-    duration: 0.5,
-    visibility: 'visible',
-})
-gsap.to('#main-talk-animate', {
-    y: 0,
-    duration: 0.5,
+let headerMenuBtn = document.querySelector('.header__menu');
+let menuBody = document.querySelector('.menu');
+let menuCloseBtn = document.querySelector('.menu__close-btn');
+
+headerMenuBtn.addEventListener("click", () => {
+    menuBody.classList.add("_menu-open");
 })
 
+menuCloseBtn.addEventListener("click", () => {
 
+    let aa = menuCloseBtn.querySelector("svg").style.transform = "rotate(180deg)";
+    setTimeout(() => menuBody.classList.remove("_menu-open"), 1000);
+})
 
 
 

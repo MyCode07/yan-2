@@ -1,0 +1,106 @@
+.advantages-page {
+    .header__menu {
+        background-color: #fafbff;
+
+        label,
+        span {
+            color: #141519;
+        }
+
+        span {
+            background-color: #141519;
+        }
+    }
+}
+.advantages {
+    // .advantages__page
+
+    &__page {
+        @include adaptive-value('padding-top', 230, 150, 1);
+        
+        background-color: #141519;
+        // .advantages__page-container
+
+        &-container {
+        }
+
+        // .advantages__page-body
+
+        &-body {
+        }
+
+        // .advantages__page-content
+
+        &-content {
+            h2 {
+                text-transform: uppercase;
+                color: #fafbff;
+
+                @media (max-width: 768px) {
+                    @include adaptive-value("font-size", 80, 35, 1);
+                }
+            }
+        }
+
+        // .advantages__page-list
+
+        &-list {
+            ol {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                & > :nth-child(2n) {
+                    align-self: flex-end;
+                }
+
+                li {
+                    // flex: 1 1 auto;
+                    max-width: 900px;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    border-bottom: 1px solid #fafbff;
+
+                    @media (max-width: 768px) {
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+
+                    span {
+                        font-family: Geo;
+                        font-style: normal;
+                        font-weight: 500;
+                        @include adaptive-value("font-size", 250, 150, 1);
+                        color: #fafbff;
+                        display: block;
+                        @include adaptive-value("margin-right", 100, 20, 1);
+                        position: relative;
+                        top: -25px;
+                        letter-spacing: -25px;
+
+                        @media (max-width: 768px) {
+                            top: 10px;
+                            margin: 0;
+                        }
+                    }
+
+                    p {
+                        max-width: 550px;
+                        width: 100%;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 20px;
+                        line-height: 24px;
+                        color: #fafbff;
+
+                        @media (max-width: 768px) {
+                            max-width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
