@@ -23,7 +23,7 @@ section {
 body {
     overflow-x: hidden;
     // position: relative;
-    background-color: #fafbff;
+    background-color: #f6eee3;
     color: #141519;
 
     @media (min-width: 1921px) {
@@ -54,15 +54,23 @@ body {
 
 .link-btn {
     span {
-        display: block;
         font-style: normal;
         font-family: PlayfairDisplay;
         font-weight: 400;
         @include adaptive-value("font-size", 20, 14, 1);
         line-height: 30px;
-        color: #1f1f1f;
         white-space: nowrap;
         padding-bottom: 5px;
+        color: #f6eee3;
+        overflow: hidden;
+        background: linear-gradient(to right, #304e67, #304e67 50%, #f6eee3 50%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% 100%;
+        background-position: 100%;
+        transition: background-position 275ms ease;
+        text-decoration: none;
 
         @media (max-width: 768px) {
             font-weight: 900;
@@ -73,10 +81,11 @@ body {
     label {
         display: block;
         height: 1px;
-        background-color: #1f1f1f;
+        background-color: #f6eee3;
         max-width: 400px;
         min-width: 250px;
         width: 100%;
+        transition: background-position 275ms ease;
 
         @media (max-width: 768px) {
             max-width: 100%;
@@ -88,6 +97,17 @@ body {
             display: none;
         }
     }
+
+    @media (any-hover: hover) {
+        &:hover {
+            span {
+                background-position: 0 100%;
+            }
+            label {
+                background-color: #304e67 !important;
+            }
+        }
+    }
 }
 
 .contacts__socialmedia {
@@ -96,6 +116,8 @@ body {
     align-items: flex-start;
     justify-content: flex-start;
     margin-left: 100px;
+    position: relative;
+    z-index: 5;
 
     & > :not(:last-child) {
         margin-bottom: 5px;
@@ -115,7 +137,7 @@ body {
             line-height: 17px;
             color: #343435;
             overflow: hidden;
-            background: linear-gradient(to right, #1f1f1f, #1f1f1f 50%, #727272 50%);
+            background: linear-gradient(to right, #304e67, #304e67 50%, #a07c4a 50%);
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
