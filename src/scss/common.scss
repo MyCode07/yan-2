@@ -2,6 +2,9 @@ html,
 body {
     scroll-behavior: smooth;
     height: 100%;
+    font-style: normal;
+    font-family: "BasisGrotesquePro";
+    color: #1f1f1f;
 }
 
 .wrapper {
@@ -15,12 +18,6 @@ section {
     @include adaptive-value("padding-bottom", 100, 50, 1);
     height: 100%;
     display: flex;
-}
-
-* {
-    font-style: normal;
-    font-family: "BasisGrotesquePro";
-    color: #1f1f1f;
 }
 
 body {
@@ -168,4 +165,3 @@ body {
 // .input-error {
 //     min-width: 290px;
 // }
-

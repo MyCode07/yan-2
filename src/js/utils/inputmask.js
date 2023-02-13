@@ -1,11 +1,3 @@
-// import Inputmask from 'inputmask';
-
-// const mask = new Inputmask.default("+7(999) 999-99-99")
-
-// document.querySelectorAll('input[name="phone"]').forEach(phone => {
-//      mask.mask(phone);
-// });
-
 [].forEach.call(document.querySelectorAll('input[name="phone"]'), function (input) {
     let keyCode;
     function mask(event) {

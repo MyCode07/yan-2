@@ -10,15 +10,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     forms.forEach(item => {
         item.addEventListener('submit', formSend);
+
     })
 
     async function formSend(e) {
         e.preventDefault();
+
+        document.querySelector('.btn-flip').classList.add("_send-ok");
+
         const form = e.target;
 
         let error = formValidate(form);
 
         let formData = new FormData(form);
+
 
         if (error === 0) {
             form.classList.add('_sending');
@@ -59,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 inputError.classList.remove('_visible')
             }, 2000);
         }
+
     }
 
 
@@ -110,17 +116,3 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('.popup__form').classList.remove('_open');
     }
 });
-
-formSent.addEventListener('click', function (e) {
-    let targetEl = e.target;
-
-    if (targetEl.classList.contains('form-sent')) {
-        formSent.classList.remove('_visible');
-        clientName.textContent = '';
-    }
-
-    if (targetEl.classList.contains('form-sent__close')) {
-        formSent.classList.remove('_visible');
-        clientName.textContent = '';
-    }
-})

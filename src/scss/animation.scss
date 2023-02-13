@@ -1,29 +1,33 @@
 .header-animate {
     opacity: 0;
-    transform: translateY(-200px);
+    transform: translateY(-100%);
 }
 
 .h2-animate {
     opacity: 0;
-    transform: translateY(-200px);
+    transform: translateY(-100%);
 }
 
 .text-left-animate {
     opacity: 0;
-    transform: translatex(-400px);
+    transform: translateX(-100%);
 }
 
 .text-right-animate {
     opacity: 0;
-    transform: translatex(400px);
+    transform: translateX(100%);
 }
 
 .about-text-animate {
     opacity: 0;
-    transform: translatex(400px);
+    transform: translateX(100%);
 }
 
 .list-animate {
     opacity: 0;
-    transform: translateY(200px);
+    transform: translateY(100%);
+}
+
+header {
+    transition: background-color 0.3s ease 0s;
 }
