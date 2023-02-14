@@ -5,6 +5,7 @@ import { Power3 } from 'gsap';
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
+
             gsap.to(entry.target, {
                 opacity: 1,
                 y: 0,
@@ -12,6 +13,7 @@ const observer = new IntersectionObserver(entries => {
                 duration: 1,
                 delay: 0,
             });
+            
         }
     })
 })
@@ -19,7 +21,6 @@ const observer = new IntersectionObserver(entries => {
 const elems = Array.from([
     document.querySelector('.header-animate'),
     document.querySelector('.home__email-horizontal'),
-    document.querySelector('.text-left-animate'),
 ]
     .concat([...document.querySelectorAll('.text-right-animate')])
     .concat([...document.querySelectorAll('.text-left-animate')])
@@ -60,8 +61,3 @@ for (let i = 0; i < listDelay.length; i++) {
     });
 
 }
-
-
-
-
-
