@@ -33,31 +33,6 @@ const observer2 = new IntersectionObserver(entries => {
 
 
 
-let mouse = document.querySelector('.advantages .mouse');
-let mouseBlock = document.querySelector('.advantages');
-
-mouseBlock.onmousemove = function (event) {
-    mouse.style.cssText = "left: " + event.clientX + "px; top: " + event.clientY + "px;";
-    mouse.style.display = 'block'
-}
-
-
-// let bodyRect = document.body.getBoundingClientRect();
-// let elemRect = mouseBlock.getBoundingClientRect();
-// let offset = elemRect.top - bodyRect.top;
-
-// function mousemove(event) {
-
-//     if (offset) {
-//         mouse.style.display = 'block';
-//         document.addEventListener("mousemove", function (e) {
-//             mouse.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
-//         });
-//     }
-
-
-// }
-// mousemove()
 
 
 
@@ -87,4 +62,3 @@ function colorHeader() {
 
 colorHeader()
 window.addEventListener('scroll', colorHeader);
-

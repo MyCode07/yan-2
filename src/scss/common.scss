@@ -155,50 +155,27 @@ body {
 }
 
 .mouse {
-    position: fixed;
-    transform: translate(-50%, -50%);
-    .link-arrow {
-        cursor: pointer;
-        width: 200px;
-        height: 200px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 2px solid #a07c4a;
-        border-radius: 50%;
-        transition: all 0.3s ease 0s;
-        z-index: 55;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: none;
+    width: 200px;
+    height: 200px;
+    flex: 0 0 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #a07c4a;
+    border-radius: 50%;
+    z-index: 55;
 
-        svg {
-            stroke-width: 1px;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease 0s;
-        }
-
-        @media (any-hover: hover) {
-            &:hover {
-                span {
-                    opacity: 0;
-                    visibility: hidden;
-                }
-
-                svg {
-                    opacity: 1;
-                    visibility: visible;
-                    width: 125px;
-                    height: 125px;
-                }
-            }
-        }
+    svg {
+        stroke-width: 3px;
+        width: 50%;
+        height: 50%;
     }
-    display: none;
 
+    display: none;
 }
 
 // .form-error,

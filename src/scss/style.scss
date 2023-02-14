@@ -7,6 +7,9 @@
 // load mixins
 @import "mixins";
 
+// load swiper
+@import "../../node_modules/swiper/swiper";
+
 // load common
 @import "common";
 
@@ -551,10 +554,12 @@ h2 {
 }
 
 .works {
+    min-height: 100vh;
     position: relative;
     max-width: 100vw;
     overflow: hidden;
-    padding-bottom: 0;
+    @include adaptive-value("padding-top", 100, 50, 1);
+    @include adaptive-value("padding-bottom", 100, 50, 1);
 
     // .works__container
 
@@ -666,6 +671,58 @@ h2 {
             }
         }
     }
+
+    &__slider {
+        .swiper-wrapper {
+            margin-inline: auto;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            max-width: 400px;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 500px;
+            }
+
+            &.swiper-slide-active {
+                div {
+                    opacity: 1;
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+
+            div {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 50%;
+                opacity: 0;
+                transform: translate3d(50px, 100px, 0);
+                transition: all 0.3s ease 0s;
+
+                h3 {
+                    @include adaptive-value("font-size", 44, 18, 1);
+                    line-height: 1.5;
+                    margin-bottom: 0.5em;
+                    color: #fff;
+                    font-weight: 600;
+                    top: unset;
+                    transform: translate(-10%, 0);
+                }
+
+                p {
+                    @include adaptive-value("font-size", 18, 16, 1);
+                    transform: translate(-10%, 0);
+                    line-height: 1.5;
+                    color: #fff;
+                }
+            }
+        }
+    }
 }
 
 .advantages {
@@ -700,7 +757,7 @@ h2 {
     // .advantages__content
 
     &__content {
-        @include adaptive-value("padding-top", 150, 50, 1);
+        @include adaptive-value("padding-top", 100, 50, 1);
 
         .circle {
             height: 300px;
@@ -724,7 +781,6 @@ h2 {
             align-items: center;
             justify-content: space-between;
 
-            @include adaptive-value("padding-top", 70, 10, 1);
             @include adaptive-value("padding-bottom", 50, 20, 1);
 
             @media (max-width: 992px) {
@@ -1429,3 +1485,7 @@ h2 {
 
 // load animation
 @import "animation";
+
+header{
+    display: none;
+}
