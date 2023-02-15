@@ -113,6 +113,7 @@ body {
     margin-left: 100px;
     position: relative;
     z-index: 5;
+    top: 10px;
 
     & > :not(:last-child) {
         margin-bottom: 5px;
@@ -178,31 +179,65 @@ body {
     display: none;
 }
 
-// .form-error,
-// .input-error {
-//     position: fixed;
-//     bottom: 0;
-//     left: 50%;
-//     padding-top: 10px;
-//     padding-bottom: 10px;
-//     @include adaptive-value("padding-left", 25, 15, 1);
-//     @include adaptive-value("padding-right", 25, 15, 1);
-//     text-align: center;
+h1 {
+    flex: 1 1 100%;
+    @include adaptive-value("font-size", 70, 27, 1);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -2.2px;
+    color: #a07c4a;
+    text-transform: uppercase;
+    word-spacing: 5px;
+    font-family: PlayfairDisplay;
+    @media (max-width: 768px) {
+        letter-spacing: 0.8px;
+    }
 
-//     color: #fff;
-//     background-color: red;
-//     z-index: 103;
-//     @include adaptive-value("font-size", 24, 16, 1);
-//     font-weight: 600;
-//     font-style: italic;
-//     transform: translate3d(-50%, 110%, 0);
-//     transition: transform 0.3s ease 0s;
+    span {
+        font-family: PlayfairDisplay;
+        display: block;
+        height: 1em;
+        overflow: hidden;
 
-//     &._visible {
-//         transform: translate3d(-50%, 0, 0);
-//     }
-// }
+        i {
+            display: block;
+            font-style: normal;
+            transform: translate3d(0, 100%, 0);
+            transition: all 0.9s ease 0s;
+        }
+    }
 
-// .input-error {
-//     min-width: 290px;
-// }
+    @media (max-width: 768px) {
+        font-weight: 700;
+    }
+}
+
+.form-error,
+.input-error {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    @include adaptive-value("padding-left", 25, 15, 1);
+    @include adaptive-value("padding-right", 25, 15, 1);
+    text-align: center;
+
+    color: #fff;
+    background-color: red;
+    z-index: 103;
+    @include adaptive-value("font-size", 24, 16, 1);
+    font-weight: 600;
+    font-style: italic;
+    transform: translate3d(-50%, 110%, 0);
+    transition: transform 0.3s ease 0s;
+
+    &._visible {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+.input-error {
+    min-width: 290px;
+}

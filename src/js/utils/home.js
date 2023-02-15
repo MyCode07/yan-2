@@ -1,3 +1,5 @@
+
+
 const h1 = document.querySelectorAll('h1 span');
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -13,7 +15,12 @@ const observer = new IntersectionObserver(entries => {
     })
 })
 
-observer.observe(document.querySelector('.home__content h1'))
+if (document.querySelector('._noscroll')) {
+    observer.observe(document.querySelector('.home__content h1'))
+}
+if (document.querySelector('.advantages__page')) {
+    observer.observe(document.querySelector('.advantages__page-content h1'))
+}
 
 const h2 = document.querySelectorAll('h2 span');
 const observer2 = new IntersectionObserver(entries => {

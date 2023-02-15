@@ -1,12 +1,31 @@
 .advantages-page {
-   
+    .header__logo {
+        padding-top: 15px;
+
+        svg {
+            @include adaptive-value("height", 98, 85, 1);
+
+            fill: #f6eee3;
+        }
+    }
+
+    .header__menu {
+        label {
+            color: #f6eee3;
+        }
+
+        .header__menu-line {
+            span {
+                background-color: #f6eee3;
+            }
+        }
+    }
 }
+
 .advantages {
     // .advantages__page
 
     &__page {
-        @include adaptive-value('padding-top', 230, 150, 1);
-        
         background-color: #a07c4a;
         // .advantages__page-container
 
@@ -21,12 +40,58 @@
         // .advantages__page-content
 
         &-content {
-            h2 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-height: 100vh;
+            height: 100vh;
+
+            @media (max-width: 425px) {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding-top: 200px;
+            }
+
+            h1 {
+                width: 100%;
                 text-transform: uppercase;
                 color: #f6eee3;
+                @include adaptive-value("font-size", 120, 27, 1);
 
                 @media (max-width: 768px) {
-                    @include adaptive-value("font-size", 80, 35, 1);
+                    @include adaptive-value("font-size", 80, 32, 1);
+                }
+            }
+
+            .home__email-horizontal {
+                
+                @media (max-width: 425px) {
+                    transform: rotate(0deg);
+                    width: 100%;
+                    justify-content: flex-start;
+                }
+
+                span {
+                    background: linear-gradient(to right, #304e67, #304e67 50%, #f6eee3 50%);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-size: 200% 100%;
+                    background-position: 100%;
+                    transition: all 275ms ease;
+                    text-decoration: none;
+
+                    @media (any-hover: hover) {
+                        &:hover {
+                            background-position: 0 100%;
+                            transform: scale(1.1);
+                            font-weight: 700;
+                        }
+                    }
+                    @media (max-width: 425px) {
+                        letter-spacing: normal;
+                    }
                 }
             }
         }
@@ -61,7 +126,7 @@
                         font-family: Geo;
                         font-style: normal;
                         font-weight: 500;
-                        @include adaptive-value("font-size", 250, 150, 1);
+                        @include adaptive-value("font-size", 250, 100, 1);
                         color: #f6eee3;
                         display: block;
                         @include adaptive-value("margin-right", 100, 20, 1);
@@ -70,8 +135,9 @@
                         letter-spacing: -20px;
 
                         @media (max-width: 768px) {
-                            top: 10px;
+                            top: -5px;
                             margin: 0;
+                            letter-spacing: -10px;
                         }
                     }
 
@@ -81,13 +147,14 @@
                         font-style: normal;
                         font-weight: 400;
                         font-size: 20px;
-                        @include adaptive-value('font-size', 20, 18, 1);
+                        @include adaptive-value("font-size", 20, 16, 1);
                         padding-bottom: 15px;
                         line-height: 24px;
                         color: #f6eee3;
 
                         @media (max-width: 768px) {
                             max-width: 100%;
+                            line-height: 20px;
                         }
                     }
                 }

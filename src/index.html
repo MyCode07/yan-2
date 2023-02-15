@@ -63,7 +63,8 @@
                     <div class="home__content">
                         <h1>
                             <span><i>Воплощение</i></span>
-                            <span><i>вашего видения в виртуальнуй мир</i></span>
+                            <span><i>вашего видения в </i></span>
+                            <span><i>виртуальнуй мир</i></span>
                         </h1>
                         <div class="home__email-horizontal">
                             <span>studio.yan@mail.ru</span>
@@ -82,16 +83,14 @@
 
         <section id="about" class="about title-animate">
             <div class="svg-star__animate">
-               
-                <div class="svg-star__orbit">
-               
+
+                <div class="svg-star__orbit parallaxed">
+
                     <img class="orbital-1" src="img/svg/orbital/2/Group 1.svg" alt="">
                     <img class="orbital-2" src="img/svg/orbital/2/Group 2.svg" alt="">
                     <img class="orbital-3" src="img/svg/orbital/2/Group 3.svg" alt="">
                     <img class="orbital-4" src="img/svg/orbital/2/Group 4.svg" alt="">
                     <img class="orbital-5" src="img/svg/orbital/2/Group 5.svg" alt="">
-
-
 
                 </div>
             </div>
@@ -108,7 +107,7 @@
                         <div>
                             <p class="about-text-animate animate-delay" data-delay="0.1"> Yan Studio — веб-студия
                                 дизайна и разработки сайтов. Наша
-                                студияидеальноподходитдлятого,
+                                студия идеально подходит для того,
                                 чтобы помочь вашему бизнесу
                                 перейти на новый уровень. Мы предлагаем индивидуальный веб-дизайн для компаний
                                 малого и
@@ -236,7 +235,7 @@
             <div class="works__container _container">
                 <div class="works__body">
                     <span class="small-title">НАШИ РАБОТЫ</span>
-                    <div class="works__slider">
+                    <div class="works__slider list-animate animate-delay ">
                         <div class="swiper">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
@@ -282,13 +281,13 @@
         </section>
 
         <section id="advantages" class="advantages" data-background="#a07c4a">
-            <a class="mouse" href="advantages.html">
+            <div class="mouse">
                 <svg width="101" height="101" viewBox="0 0 101 101" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 1H100V101M99.5816 1.35355L0.500003 100.5" stroke="#A07C4A" />
                 </svg>
-            </a>
+            </div>
             <div class="advantages__container _container">
-                <div class="advantages__body">
+                <a href="advantages.html" class="advantages__body">
                     <span class="small-title">преимущества</span>
                     <div class="advantages__content">
                         <div class="advantages__content-top">
@@ -303,7 +302,7 @@
                                 вашему бизнесу.</p>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </section>
 
@@ -498,7 +497,7 @@
                                     сильное присутствие в Интернете.
                                 </p>
 
-                                <a href="" class="link-btn list-animate animate-delay" data-delay="0.1">
+                                <a href="#contacts" class="link-btn list-animate animate-delay" data-delay="0.1">
                                     <span>Давайте поговорим</span>
                                     <label></label>
                                 </a>
@@ -530,22 +529,23 @@
                     <div class="contacts__flex">
                         <div class="contacts__flex-top">
                             <div class="contacts__flex-title">
-                                <h2 class="h2-animate">Присоединяйтесь к нам для</h2>
+                                <h2 class="text-left-animate">Присоединяйтесь к нам для</h2>
                                 <div>
-                                    <h2>открытого общения и
+                                    <h2 class="text-left-animate">открытого общения и
                                     </h2>
 
                                     <ol class="contacts__socialmedia">
-                                        <li class=" list-animate animate-delay" data-delay="0.1"><a
+                                        <li class=" list-animate animate-delay" data-delay="0.35"><a
                                                 href="">VKONTAKTE</a></li>
-                                        <li class=" list-animate animate-delay" data-delay="0.2"><a href="">TELEGRAM</a>
+                                        <li class=" list-animate animate-delay" data-delay="0.45"><a
+                                                href="">TELEGRAM</a>
                                         </li>
-                                        <li class=" list-animate animate-delay" data-delay="0.3"><a href="">Whatsapp</a>
+                                        <li class=" list-animate animate-delay" data-delay="0.5"><a href="">Whatsapp</a>
                                         </li>
                                     </ol>
 
                                 </div>
-                                <h2 class="h2-animate">партнерских возможностей</h2>
+                                <h2 class="text-left-animate">партнерских возможностей</h2>
                             </div>
                             <div class="contacts__flex-middle">
                                 <p class="contacts__flex-subtitle text-left-animate">Свяжитесь с нами для
@@ -583,7 +583,7 @@
                                         name="phone">
                                     <span>*Обязательное поле</span>
                                 </div>
-                                <div class="form__item  list-animate animate-delay" data-delay="0.3">
+                                <div class="form__item  list-animate animate-delay " data-delay="0.3">
                                     <label>СООБЩЕНИЕ</label>
                                     <input class="_req" placeholder="ПОЖАЛУЙСТА ВВЕДИТЕ ВАШЕ СООБЩЕНИЕ"
                                         name="msg"></input>
@@ -591,7 +591,7 @@
                                 </div>
                             </form>
 
-                            <div class="send list-animate animate-delay" data-delay="0.3">
+                            <div class="send form-send list-animate animate-delay " data-delay="0.3">
                                 <button class="_button btn-slice btn-flip" data-back="сообщение отправлено"
                                     data-front="ОТПРАВИТЬ СООБЩЕНИЕ">
                                 </button>

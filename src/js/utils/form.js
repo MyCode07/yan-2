@@ -2,7 +2,7 @@
 
 const formEror = document.querySelector('.form-error');
 const inputError = document.querySelector('.input-error');
-const formSent = document.querySelector('.form-sent');
+const formSend = document.querySelector('.form-send');
 const clientName = document.querySelector('.client-name');
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     async function formSend(e) {
         e.preventDefault();
 
-        document.querySelector('.btn-flip').classList.add("_send-ok");
+     
 
         const form = e.target;
 
@@ -116,3 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('.popup__form').classList.remove('_open');
     }
 });
+
+
+
+

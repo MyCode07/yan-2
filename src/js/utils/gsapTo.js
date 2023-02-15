@@ -15,9 +15,10 @@ const observer = new IntersectionObserver(entries => {
     })
 })
 
+
 const elems = Array.from([
     document.querySelector('.header-animate'),
-    document.querySelector('.home__email-horizontal'),
+    document.querySelector('.home__email-horizontal')
 ]
     .concat([...document.querySelectorAll('.text-right-animate')])
     .concat([...document.querySelectorAll('.text-left-animate')])
