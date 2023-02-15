@@ -122,7 +122,7 @@ h2 {
         svg {
             @include adaptive-value("height", 98, 85, 1);
 
-            fill: #1f1f1f;
+            fill: #a07c4a;
         }
     }
 
@@ -163,7 +163,7 @@ h2 {
             font-weight: 400;
             @include adaptive-value("font-size", 20, 18, 1);
             line-height: 120%;
-            color: #1f1f1f;
+            color: #a07c4a;
             font-family: PlayfairDisplay;
 
             @media (max-width: 425px) {
@@ -194,7 +194,7 @@ h2 {
                 position: relative;
                 height: 1px;
                 @include adaptive-value("width", 50, 40, 1);
-                background-color: #1f1f1f;
+                background-color: #a07c4a;
             }
         }
     }
@@ -375,23 +375,8 @@ h2 {
     position: relative;
     @include adaptive-value("padding-bottom", 100, 50, 1);
 
-    svg {
-        position: absolute;
-        bottom: 0;
-        left: -20px;
-        z-index: 0;
-        max-width: 806px;
-        width: 100%;
-        height: unset;
-
-        @media (max-width: 992px) {
-            mix-blend-mode: difference;
-        }
-
-        @media (max-width: 425px) {
-            display: none;
-        }
-    }
+    
+     
     // .about__container
 
     &__container {
