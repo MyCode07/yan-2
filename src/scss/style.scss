@@ -120,7 +120,7 @@ h2 {
         padding-top: 15px;
 
         svg {
-            @include adaptive-value("height", 98, 85, 1);
+            @include adaptive-value("height", 65, 50, 1);
 
             fill: #a07c4a;
         }
@@ -145,6 +145,15 @@ h2 {
         @media (any-hover: hover) {
             &:hover {
                 transform: scale(1.1) translate(-5px, 5px);
+
+                .header__menu-line {
+                    & > :first-child {
+                        right: 15px;
+                    }
+                    & > :last-child {
+                        right: -15px;
+                    }
+                }
             }
         }
 
@@ -195,6 +204,7 @@ h2 {
                 height: 1px;
                 @include adaptive-value("width", 50, 40, 1);
                 background-color: #a07c4a;
+                transition: all 0.4s ease-in-out 0s;
             }
         }
     }
@@ -340,10 +350,23 @@ h2 {
 }
 
 .about {
-    background: #f6eee3;
+    background: #1f1f1f;
     position: relative;
     @include adaptive-value("padding-bottom", 100, 50, 1);
+    position: relative;
 
+    &:before {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        background: #1f1f1f;
+        width: 100vw;
+        height: 100%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index: -1;
+    }
     // .about__container
 
     &__container {
@@ -367,7 +390,7 @@ h2 {
         & > :not(:last-child) {
             @include adaptive-value("margin-bottom", 40, 30, 1);
         }
-        
+
         div {
             display: flex;
             align-items: flex-start;
@@ -536,6 +559,20 @@ h2 {
     overflow: hidden;
     @include adaptive-value("padding-top", 100, 50, 1);
     @include adaptive-value("padding-bottom", 100, 50, 1);
+    background: #f6eee3;
+
+    &:before {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        background: #f6eee3;
+        width: 100vw;
+        height: 100%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index: -1;
+    }
 
     // .works__container
 
@@ -735,90 +772,28 @@ h2 {
 
     &__content {
         @include adaptive-value("padding-top", 100, 50, 1);
+        @include adaptive-value("padding-bottom", 100, 50, 1);
 
-        .circle {
-            height: 300px;
-            animation: run 10s infinite linear both;
-
-            &-parent {
-                border-radius: 50%;
-                overflow: hidden;
+        p {
+            span {
+                color: #f6eee3;
             }
 
-            @media (max-width: 768px) {
-                max-height: 250px;
-                height: 100%;
-            }
-        }
-
-        // .advantages__content-top
-
-        &-top {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            @include adaptive-value("padding-bottom", 50, 20, 1);
-
-            @media (max-width: 992px) {
-                flex-direction: column;
-            }
-
-            p {
-                span {
-                    color: #f6eee3;
-                }
-
-                @include adaptive-value("padding-left", 15, 0, 1);
-                @include adaptive-value("padding-right", 15, 0, 1);
-
-                max-width: 60%;
-                width: 100%;
-                font-family: PlayfairDisplay;
-                font-style: normal;
-                font-weight: 400;
-                @include adaptive-value("font-size", 30, 15, 1);
-                line-height: 180%;
-                color: #a07c4a;
-
-                @media (max-width: 768px) {
-                    max-width: 100%;
-                    padding: 0;
-                }
-            }
-        }
-
-        // .advantages__content-bottom
-
-        &-bottom {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-
-            @media (max-width: 992px) {
-                flex-direction: column;
-            }
-        }
-
-        &-text {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
+            max-width: 60%;
             width: 100%;
+            font-family: PlayfairDisplay;
+            font-style: normal;
+            font-weight: 400;
+            @include adaptive-value("font-size", 25, 15, 1);
+            line-height: 180%;
+            color: #a07c4a;
 
             @media (max-width: 768px) {
-                justify-content: space-around;
-                justify-content: center;
-            }
-
-            @media (any-hover: hover) {
-                &:hover {
-                    img {
-                        transform: rotate(-90deg);
-                    }
-                }
+                max-width: 100%;
+                padding: 0;
             }
         }
+
     }
 }
 
@@ -1470,3 +1445,11 @@ h2 {
 
 // load animation
 @import "animation";
+
+// load intro
+@import "intro";
+
+.home-right .letter {
+    display: inline-block;
+    line-height: 1em;
+}

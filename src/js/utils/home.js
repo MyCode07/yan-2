@@ -1,4 +1,37 @@
 
+// loading__screen-title animation  
+var textWrapper = document.querySelector('.loading__screen-title');
+textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+
+anime.timeline({ loop: false }).add({
+    targets: '.loading__screen-title  .letter',
+    translateY: [40, 0],
+    translateZ: 0,
+    opacity: [0, 1],
+    easing: "easeOutExpo",
+    duration: 1400,
+    delay: function (el, i) {
+        return 300 + 30 * i;
+    }
+}).add({
+    targets: '.loading__screen-title .letter ',
+    translateY: [0, -40],
+    opacity: [1, 0],
+    easing: "easeInExpo",
+    duration: 1200,
+    delay: function (el, i) {
+        return 100 + 30 * i;
+    }
+});
+
+// reveling other elements
+TweenMax.to(".loading__screen", 2.2, {
+    delay: 3.8,
+    top: "-100%",
+    ease: Expo.easeInOut
+});
+
+
 
 const h1 = document.querySelectorAll('h1 span');
 const observer = new IntersectionObserver(entries => {
@@ -37,11 +70,6 @@ const observer2 = new IntersectionObserver(entries => {
     })
 
 })
-
-
-
-
-
 
 const header = document.querySelector('.header__logo svg');
 const headerMenuText = document.querySelector('.header__menu label');

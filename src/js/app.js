@@ -10,6 +10,6 @@ import './utils/form.js';
 // import './utils/lox.js';
 import './utils/parallax.js';
 import './utils/steps-animate.js';
-
-
+import './utils/intro.js';
+import './utils/header-animation.js';
 

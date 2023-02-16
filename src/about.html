@@ -1,65 +1,74 @@
 @@include('./html/head.html')
 
-<body class="advantages-page">
+<body class="intro-page">
     @@include('./html/header.html')
+    <div class="wrap">
+    </div>
+    <div id="ball"></div>
 
-    <main class="page">
-        <section class="advantages__page">
-            <div class="advantages__page-container _container">
-                <div class="advantages__page-body">
-                    <div class="advantages__page-content">
-                        <h1><span><i>преимущества</i></span>
-                        </h1>
-                        <div class="home__email-horizontal">
-                            <span>studio.yan@mail.ru</span>
+    <main class="intro">
+
+        <div class="wrapper">
+            <div class="loading__screen">
+                <div class="loading__screen-intro">
+                    <h1 class="loading__screen-title">
+                        Culture Manual
+                    </h1>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="content__body">
+                    <div class="content__left person">
+                        <div class="content__left-block person__block">
+                            <div class="content__right-img person__block-img"></div>
+                            <div class="content__left-media person__block-media">
+                                <ol>
+                                    <li><a href=""></a> VK</li>
+                                    <li><a href=""></a> TG</li>
+                                    <li><a href=""></a> @M</li>
+                                </ol>
+                            </div>
+                            <div class="content__left-info person__block-info">
+                                <h3 class="person__block-name">EREM VARDANYAN</h3>
+                                <p class="sub-name">lorem lorem lorem</p>
+                                <div class="bar"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="advantages__page-list">
-                        <ol>
-                            <li class="text-left-animate" data-delay="0.1">
-                                <span>01</span>
-                                <p>Как новичок в области создания веб-сайтов, вы можете задаться вопросом, почему вы
-                                    должны выбрать нас среди других более
-                                    известных компаний. Однако быть новичком в отрасли на самом деле может быть
-                                    преимуществом по нескольким причинам:</p>
-                            </li>
-                            <li class="text-right-animate" data-delay="0.1">
-                                <span>02</span>
-                                <p>Современные навыки: наша команда всегда в курсе последних технологий и тенденций
-                                    в дизайне веб-сайтов, гарантируя, что
-                                    ваш веб-сайт будет создан с использованием самых современных и эффективных
-                                    методов.</p>
-                            </li>
-                            <li class="text-left-animate" data-delay="0.1.5">
-                                <span>03</span>
-                                <p>Свежий взгляд: мы предлагаем свежий и инновационный подход к дизайну и разработке
-                                    веб-сайтов, который может привести к
-                                    уникальным и креативным решениям для вашего проекта.</p>
-                            </li>
-                            <li class="text-right-animate" data-delay="0.2">
-                                <span>04</span>
-                                <p>Гибкость: наш меньший размер также позволяет нам быть более гибкими и
-                                    приспосабливаться к изменениям и проблемам,
-                                    которые могут возникнуть в процессе разработки.</p>
-                            </li>
-                            <li class="text-left-animate" data-delay="0.25">
-                                <span>05</span>
-                                <p>Индивидуальное внимание: как небольшая компания, мы можем обеспечить более
-                                    индивидуальный подход к каждому из наших
-                                    клиентов. Это позволяет нам полностью понять ваши потребности и адаптировать
-                                    наши услуги для их удовлетворения.</p>
-                            </li>
-                            <li class="text-right-animate" data-delay="0.3">
-                                <span>06</span>
-                                <p>Короче говоря, отсутствие у нас опыта в отрасли перевешивает наши уникальные
-                                    сильные стороны, что делает нас сильным
-                                    выбором для вашего следующего проекта веб-сайта.</p>
-                            </li>
 
-                        </ol>
                     </div>
-        </section>
+                    <div class="content__center">
+                        <div class="content__top">
+                            <div class="content__top-logo">YAN<span>STUDIO</span></div>
+                            <div class="content__top-year">2023</div>
+                        </div>
+                        <div class="content__overlay-text">ОНЛАЙН • СТУДИЯ • ПРОГРАММИРОВАНЯ</div>
+                    </div>
+                    <div class="content__right person">
+                        <div class="content__right-block person__block">
+                            <div class="content__right-img person__block-img"></div>
 
+                            <div class="content__right-media person__block-media">
+                                <ol>
+                                    <li><a href=""></a> VK</li>
+                                    <li><a href=""></a> TG</li>
+                                    <li><a href=""></a> @M</li>
+                                </ol>
+                            </div>
+                            <div class="content__right-info person__block-info">
+                                <h3 class="person__block-name">GRIGOR VARDANYAN</h3>
+                                <p class="sub-name">lorem lorem lorem</p>
+                                <div class="bar"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 
+        <div id="scene" class="main__page-image">
+        </div> -->
         <section id="ticker" class="ticker " data-background="">
             <div class="ticker__container _container">
                 <div class="ticker__body">
@@ -70,8 +79,8 @@
                 </div>
             </div>
         </section>
-
     </main>
+
     <footer class="footer" data-background="#a07c4a">
         <section id="contacts" class="contacts">
             <div class="contacts__container _container">
@@ -80,7 +89,7 @@
                     <div class="contacts__flex">
                         <div class="contacts__flex-top">
                             <div class="contacts__flex-title">
-                                <h2 class="text-left-animate" >Присоединяйтесь к нам для</h2>
+                                <h2 class="text-left-animate">Присоединяйтесь к нам для</h2>
                                 <div>
                                     <h2 class="text-left-animate">открытого общения и
                                     </h2>
@@ -89,7 +98,8 @@
                                         <li class=" list-animate animate-delay" data-delay="0.35"><a
                                                 href="">VKONTAKTE</a>
                                         </li>
-                                        <li class=" list-animate animate-delay" data-delay="0.45"><a href="">TELEGRAM</a>
+                                        <li class=" list-animate animate-delay" data-delay="0.45"><a
+                                                href="">TELEGRAM</a>
                                         </li>
                                         <li class=" list-animate animate-delay" data-delay="0.5"><a href="">Whatsapp</a>
                                         </li>
@@ -106,7 +116,7 @@
                                     дружеской беседы. Мы с нетерпением ждем вашего сообщения».</p>
                                 <div>
                                     <ol class="contacts__socialmedia" style="display: none;">
-                                        <li ><a href="">VKONTAKTE</a></li>
+                                        <li><a href="">VKONTAKTE</a></li>
                                         <li><a href="">TELEGRAM</a></li>
                                         <li><a href="">Whatsapp</a></li>
                                     </ol>
@@ -159,8 +169,6 @@
             </div>
         </section>
     </footer>
-
-
 
     <script src="js/app.min.js"></script>
 </body>

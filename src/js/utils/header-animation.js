@@ -1,9 +1,21 @@
+
 import gsap from "gsap";
 
-let homePage = document.querySelector('page');
-let advantagesPage = document.querySelector('advantages-page');
+let header = document.querySelector('.header-animate')
+gsap.to(header, {
+    opacity: 1,
+    y: 0,
+    x: 0,
+    duration: 1,
+    delay: 3,
+});
 
-if (homePage || advantagesPage) {
+
+let homePage = document.querySelector('.page');
+let advantagesPage = document.querySelector('.advantages-page');
+let aboutPage = document.querySelector('.intro');
+
+if (homePage || advantagesPage || aboutPage) {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -22,7 +34,6 @@ if (homePage || advantagesPage) {
 
     const elems = Array.from([
         document.querySelector('.header-animate'),
-        document.querySelector('.home__email-horizontal')
     ]
         .concat([...document.querySelectorAll('.text-right-animate')])
         .concat([...document.querySelectorAll('.text-left-animate')])
