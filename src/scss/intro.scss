@@ -1,13 +1,3 @@
-html,
-body {
-    margin: 0%;
-    padding: 0%;
-    width: 100%;
-    height: 100vh;
-    background: #121212;
-    font-family: PlayfairDisplay !important;
-}
-
 //........................................
 .wrap {
     position: fixed;
@@ -37,41 +27,8 @@ body {
     z-index: 2;
 }
 
-.loading {
-    // .loading__screen
 
-    &__screen {
-        position: absolute;
-        margin: 0%;
-        padding: 0%;
-        width: 100%;
-        height: 100vh;
-        z-index: 44;
-        background: #0f0f0f;
-        // .loading__screen-intro
 
-        &-intro {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-        }
-
-        // .loading__screen-title
-
-        &-title {
-            @include adaptive-value("font-size", 80, 50, 1);
-            font-weight: 300;
-            color: #fff;
-            font-family: PlayfairDisplay;
-        }
-    }
-}
-.loading__screen-title .letter {
-    display: inline-block;
-    line-height: 1em;
-}
 .content {
     // .content__body
 
@@ -238,6 +195,7 @@ body {
         }
     }
 }
+
 .person {
     width: 30%;
 
@@ -397,23 +355,3 @@ body {
         cursor: none !important;
     }
 }
-
-
-// .main__page-image {
-//     position: relative;
-//     z-index: 55;
-//     @include adaptive-value("width", 320, 160, 1);
-//     @include adaptive-value("height", 478, 239, 1);
- 
-
-//     img {
-//         position: absolute;
-//         left: 0;
-//         top: 0;
-//         width: 100%;
-//         height: 100%;
-//         @media (max-width: 768px) {
-//             margin-top: 20px;
-//         }
-//     }
-// }

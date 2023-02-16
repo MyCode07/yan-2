@@ -1,5 +1,7 @@
 "use strict"
 
+import './inputmask.js';
+
 const formEror = document.querySelector('.form-error');
 const inputError = document.querySelector('.input-error');
 const formSend = document.querySelector('.form-send');

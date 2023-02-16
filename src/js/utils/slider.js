@@ -1,10 +1,11 @@
-import { Swiper, Navigation, Pagination, EffectCoverflow } from "swiper";
+import { Swiper, Pagination, EffectCoverflow } from "swiper";
+import { isMobile } from './isMobile.js'
 
 const slides = document.querySelectorAll('.works .swiper-slide');
 if (slides.length) {
     new Swiper('.works .swiper', {
         modules: [
-            Navigation, Pagination, EffectCoverflow
+            Pagination, EffectCoverflow
         ],
         loop: true,
         effect: 'coverflow',
@@ -12,6 +13,7 @@ if (slides.length) {
         centeredSlides: true,
         initialSlide: 1,
         slidesPerView: 'auto',
+
         coverflowEffect: {
             rotate: 60,
             stretch: 0,
@@ -19,6 +21,15 @@ if (slides.length) {
             modifier: 1,
             scale: 1,
             slideShadows: false,
+        },
+
+        pagination: {
+            el: '.works__slider-pagination',
+            clickable: true
         }
     })
+
+    if (isMobile.any()) {
+        document.querySelector('.works__slider-pagination').classList.add('_visible');
+    }
 }

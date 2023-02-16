@@ -1,7 +1,7 @@
 
 import gsap from "gsap";
 
-if (document.querySelector('._noscroll')) {
+if (document.querySelector('.home-page')) {
     function menuimageOn() {
         if (window.innerWidth >= 425) {
             let navLink = gsap.utils.toArray('.show-svg');
@@ -53,6 +53,5 @@ if (document.querySelector('._noscroll')) {
             init();
         }
     }
-
     menuimageOn()
 }

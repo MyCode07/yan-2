@@ -73,9 +73,6 @@ header {
             max-width: 600px;
             width: 100%;
             @include adaptive-value("height", 600, 280, 1);
-            @media (max-width: 768px) {
-                display: none;
-            }
         }
     }
 }

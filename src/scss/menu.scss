@@ -241,7 +241,6 @@
                         &:hover {
                             a {
                                 svg {
-
                                     path {
                                         fill: #304e67;
                                         stroke: #a07c4a;
@@ -275,14 +274,13 @@
             -webkit-text-fill-color: transparent;
             background-size: 200% 100%;
             background-position: 100%;
-            transition: all 275ms ease;
             text-decoration: none;
+            transition: all 0.5s ease;
 
             @media (any-hover: hover) {
                 &:hover {
                     background-position: 0 100%;
                     transform: scale(1.2);
-                    font-weight: 700;
                 }
             }
 
