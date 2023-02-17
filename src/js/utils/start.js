@@ -65,4 +65,8 @@ function observeAllAnimatedElements() {
 
     observe()
     observeHeader()
+
+    setTimeout(() => {
+        document.querySelector('.loading__screen').remove();
+    }, 1000);
 }

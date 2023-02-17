@@ -2,98 +2,87 @@
 
 import './inputmask.js';
 
-const formEror = document.querySelector('.form-error');
-const inputError = document.querySelector('.input-error');
-const formSend = document.querySelector('.form-send');
-const clientName = document.querySelector('.client-name');
-
 document.addEventListener('DOMContentLoaded', function () {
-    const forms = document.querySelectorAll('form');
+    const forms = document.querySelector('form');
 
-    forms.forEach(item => {
-        item.addEventListener('submit', formSend);
+    forms.addEventListener('submit', formSend);
 
-    })
 
     async function formSend(e) {
         e.preventDefault();
 
-     
-
         const form = e.target;
-
-        let error = formValidate(form);
-
-        let formData = new FormData(form);
+        const error = formValidate(form);
+        const formData = new FormData(form);
 
 
         if (error === 0) {
             form.classList.add('_sending');
-            let response = await fetch('../../files/form.php', {
+            const response = await fetch('../../files/form.php', {
                 method: 'POST',
                 body: formData
             });
 
             if (response.ok) {
-                // let result = await response.json();
-                clientName.textContent = form.querySelector('input[name]').value;
-
                 form.reset();
                 form.classList.remove('_sending');
 
-                if (form.closest('.popup__form')) {
-                    closePopupForm();
-                }
-
-                formSent.classList.add('_visible');
+                form.classList.add('_sent');
+                setTimeout(() => {
+                    form.classList.remove('_sent');
+                }, 2000);
             }
 
             else {
-                formEror.classList.add('_visible')
-                form.classList.add('_error');
                 form.classList.remove('_sending');
-
+                
+                form.classList.add('_fail');
                 setTimeout(() => {
-                    formEror.classList.remove('_visible')
-                    form.classList.remove('_error');
+                    form.classList.remove('_fail');
                 }, 2000);
             }
         }
         else {
-            inputError.classList.add('_visible')
-
+            form.classList.add('_error');
             setTimeout(() => {
-                inputError.classList.remove('_visible')
+                form.classList.remove('_error');
             }, 2000);
         }
-
     }
 
 
     function formValidate(form) {
         let error = 0;
-        let formReq = form.querySelectorAll('._req');
+        const formReq = form.querySelectorAll('input._req');
 
         for (let index = 0; index < formReq.length; index++) {
             const input = formReq[index];
-            formRemoveError(input);
+            const formItem = input.closest('.form__item');
+            formRemoveError(formItem);
+
+
+            input.addEventListener('input', function () {
+                if (formItem.classList.contains('_error')) {
+                    formRemoveError(formItem);
+                }
+            })
 
             if (input.classList.contains('_email')) {
                 if (emailTest(input)) {
-                    formAddError(input);
+                    formAddError(formItem);
                     error++;
                 }
             }
             else if (input.classList.contains('_phone')) {
                 if (input.value.length < 17) {
-                    formAddError(input);
+                    formAddError(formItem);
                     error++;
                 }
             }
 
             else {
                 if (input.value === '') {
-                    formAddError(input);
+                    formAddError(formItem);
                     error++;
                 }
             }
@@ -109,16 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
         input.classList.remove('_error');
     }
 
-    //Функция теста email
     function emailTest(input) {
         return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
     }
-
-    function closePopupForm() {
-        document.querySelector('.popup__form').classList.remove('_open');
-    }
 });
-
-
-
-

@@ -1,24 +1,10 @@
 @@include('./html/head.html')
 
 <body class="_noscroll home-page">
-    <div class="loading__screen">
-        <div class="loading__screen-intro">
-            <h1 class="loading__screen-title">
-                <i style="--count:1">Y</i>
-                <i style="--count:2">a</i>
-                <i style="--count:3">n</i>
-                <i style="--count:4">&nbsp</i>
-                <i style="--count:5">S</i>
-                <i style="--count:6">t</i>
-                <i style="--count:7">u</i>
-                <i style="--count:8">d</i>
-                <i style="--count:9">i</i>
-                <i style="--count:10">o</i>
-            </h1>
-        </div>
-    </div>
+    @@include('./html/loading.html')
+    @@include('./html/header.html')
+
     <main class="page">
-        @@include('./html/header.html')
 
         <section class="home" data-background="#a07c4a">
             <div class="home__container _container">
@@ -244,28 +230,58 @@
             </div>
         </section>
 
-        <section id="advantages" class="advantages" data-background="#a07c4a">
-            <div class="mouse">
-                <svg width="101" height="101" viewBox="0 0 101 101" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0 1H100V101M99.5816 1.35355L0.500003 100.5" stroke="#A07C4A" />
-                </svg>
-            </div>
-            <div class="advantages__container _container">
-                <a href="advantages.html" class="advantages__body">
-                    <span class="small-title">преимущества</span>
-                    <div class="advantages__content">
 
-                        <p class="text-left-animate" data-delay="0"><span>............................</span> Мы
-                            предлагаем
-                            индивидуальный подход
-                            к дизайну веб-сайтов, сочетающий креативность, функциональность и технические
-                            знания,
-                            чтобы воплотить в жизнь ваше
-                            уникальное видение. Доверьте нам создание веб-сайта, который не только выглядит
-                            потрясающе, но и приносит результаты
-                            вашему бизнесу.</p>
-                    </div>
-                </a>
+        <section class="advantages">
+            <div class="advantages__container _container">
+                <div class="advantages__body">
+                    <span class="small-title">ПРЕИМУЩЕСТВА</span>
+                    <ol>
+                        <li class="text-left-animate" data-delay="0.1">
+                            <p>Мы
+                                предлагаем
+                                индивидуальный подход
+                                к дизайну веб-сайтов, сочетающий креативность, функциональность и технические
+                                знания,
+                                чтобы воплотить в жизнь ваше
+                                уникальное видение. Доверьте нам создание веб-сайта, который не только выглядит
+                                потрясающе, но и приносит результаты
+                                вашему бизнесу.</p>
+                        </li>
+                        <li class="text-left-animate" data-delay="0.1">
+                            <p>Как новичок в области создания веб-сайтов, вы можете задаться вопросом, почему вы
+                                должны выбрать нас среди других более
+                                известных компаний. Однако быть новичком в отрасли на самом деле может быть
+                                преимуществом по нескольким причинам:</p>
+                        </li>
+                        <li class="text-right-animate" data-delay="0.1">
+                            <p>Современные навыки: наша команда всегда в курсе последних технологий и тенденций
+                                в дизайне веб-сайтов, гарантируя, что
+                                ваш веб-сайт будет создан с использованием самых современных и эффективных
+                                методов.</p>
+                        </li>
+                        <li class="text-left-animate" data-delay="0.1.5">
+                            <p>Свежий взгляд: мы предлагаем свежий и инновационный подход к дизайну и разработке
+                                веб-сайтов, который может привести к
+                                уникальным и креативным решениям для вашего проекта.</p>
+                        </li>
+                        <li class="text-right-animate" data-delay="0.2">
+                            <p>Гибкость: наш меньший размер также позволяет нам быть более гибкими и
+                                приспосабливаться к изменениям и проблемам,
+                                которые могут возникнуть в процессе разработки.</p>
+                        </li>
+                        <li class="text-left-animate" data-delay="0.25">
+                            <p>Индивидуальное внимание: как небольшая компания, мы можем обеспечить более
+                                индивидуальный подход к каждому из наших
+                                клиентов. Это позволяет нам полностью понять ваши потребности и адаптировать
+                                наши услуги для их удовлетворения.</p>
+                        </li>
+                        <li class="text-right-animate" data-delay="0.3">
+                            <p>Короче говоря, отсутствие у нас опыта в отрасли перевешивает наши уникальные
+                                сильные стороны, что делает нас сильным
+                                выбором для вашего следующего проекта веб-сайта.</p>
+                        </li>
+                    </ol>
+                </div>
             </div>
         </section>
 
@@ -299,7 +315,7 @@
                                     </li>
                                     <li class="list-animate animate-delay" data-delay="0">
                                         <label>Корпоративный сайт</label>
-                                        
+
                                         <p><span>От 70000</span>
                                             Корпоративный сайт, может быть более сложным и требовать больше времени и
                                             ресурсов для создания, поскольку он должен
@@ -308,7 +324,7 @@
                                     </li>
                                     <li class="list-animate animate-delay" data-delay="0">
                                         <label>Интернет-магазин</label>
-                                        
+
                                         <p><span>От 70000</span>
                                             Сайт электронной коммерции или часто является самым дорогим вариантом,
                                             поскольку он требует надежной функциональности
@@ -425,13 +441,17 @@
                                         name="msg"></input>
                                     <span>*Обязательное поле</span>
                                 </div>
+                                <div class="list-animate animate-delay" data-delay="0.3">
+                                    <button type="submit">
+                                        <label>ОТПРАВИТЬ СООБЩЕНИЕ</label>
+                                        <span class="sent">сообщение отправлено</span>
+                                        <span class="fail">ошибка</span>
+                                        <span class="error">заполните все поля</span>
+                                    </button>
+                                </div>
                             </form>
 
-                            <div class="send form-send list-animate animate-delay " data-delay="0.3">
-                                <button class="_button btn-slice btn-flip" data-back="сообщение отправлено"
-                                    data-front="ОТПРАВИТЬ СООБЩЕНИЕ">
-                                </button>
-                            </div>
+
                         </div>
                     </div>
                     <div class="footer__bottom list-animate animate-delay" data-delay="0.3">
