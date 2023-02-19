@@ -12,24 +12,8 @@
     cursor: url("../img/cursor.png"), auto !important;
 }
 
-#ball {
-    width: 60px;
-    height: 60px;
-    background: none;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    mix-blend-mode: exclusion;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    margin: -10px 0 0 -10px;
-    pointer-events: none;
-    z-index: 2;
-}
-
-
-
 .content {
+    background: #1f1f1f;
     // .content__body
 
     &__body {
@@ -66,13 +50,18 @@
         // .content__left-info
 
         &-info {
-            @include adaptive-value("left", 280, 10, 1);
+            @include adaptive-value("left", 371, 10, 1);
 
             @media (max-width: 992px) {
                 padding-left: 10px;
             }
             @media (max-width: 768px) {
                 padding: 0;
+            }
+
+            .sub-name {
+                transform: translate3d(0, 50px, 0);
+                opacity: 0;
             }
         }
     }
@@ -82,7 +71,7 @@
     &__center {
         padding: 20px;
         height: 100vh;
-        background: #121212;
+        background: #1f1f1f;
         width: 40%;
         display: flex;
         flex-direction: column;
@@ -107,7 +96,8 @@
             z-index: 1;
             font-size: 11px;
             color: rgba(255, 255, 255, 0.4);
-
+            opacity: 0;
+            transform: translateX(-150%);
             span {
                 color: #fff;
             }
@@ -118,6 +108,8 @@
         &-year {
             color: #fff;
             font-size: 11px !important;
+            opacity: 0;
+            transform: translateX(150%);
         }
     }
 
@@ -170,9 +162,10 @@
         // .content__right-info
 
         &-info {
-            @include adaptive-value("right", 240, 10, 1);
+            @include adaptive-value("right", 371, 10, 1);
+            align-items: flex-end !important;
+
             @media (max-width: 992px) {
-                align-items: flex-end !important;
                 padding-right: 10px;
             }
 
@@ -185,12 +178,13 @@
                     text-align: right;
                 }
             }
-            p {
-                align-self: end;
+
+            .sub-name {
+                transform: translate3d(0, 50px, 0);
+                opacity: 0;
             }
 
             .bar {
-                align-self: flex-end;
             }
         }
     }
@@ -216,30 +210,37 @@
         align-items: flex-start;
         justify-content: space-between;
         height: 100vh;
-        background: url("../img/hero--right.jpg") no-repeat 50% 50%;
-        animation: animatedBackground2 5s cubic-bezier(0.19, 1, 0.22, 1);
-        animation-delay: 3.8s;
-        background-size: cover;
 
         @media (max-width: 768px) {
             height: 50vh;
-            background-position: center;
         }
-
         // .person__block-img
 
         &-img {
+            width: 100%;
+            height: 100vh;
+            background: url("../img/hero--right.jpg") no-repeat 50% 50%;
+            // animation: animatedBackground2 5s cubic-bezier(0.19, 1, 0.22, 1);
+            // animation-delay: 3.8s;
+            background-size: cover;
+            transform: scale(1.2);
+            opacity: 0;
+
+            @media (max-width: 768px) {
+                background-position: center;
+            }
         }
 
         // .person__block-info
 
         &-info {
+            overflow: hidden;
             bottom: 80px;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             justify-content: space-between;
-            color: #fff;
+            color: #a07c4a;
             position: absolute;
             z-index: 1;
             max-width: 283px;
@@ -259,20 +260,23 @@
                 display: block;
                 font-weight: 200;
                 @include adaptive-value("font-size", 18, 16, 1);
-                font-family: BasisGrotesquePro;
+                font-family: PlayfairDisplay;
             }
 
             .bar {
                 @include adaptive-value("margin-top", 20, 10, 1);
                 width: 140px;
                 height: 1px;
-                background: rgba(255, 255, 255, 0.5);
+                background: #a07c4a;
+                opacity: 0.5;
+                width: 0;
             }
         }
 
         // .person__block-name
 
         &-name {
+            font-family: PlayfairDisplay;
             font-weight: 400;
             @include adaptive-value("font-size", 22, 16, 1);
             letter-spacing: 4px;
@@ -288,6 +292,8 @@
         // .person__block-media
 
         &-media {
+            position: absolute;
+            bottom: 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -298,6 +304,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+
                 & > :not(:last-child) {
                     margin-right: 16px;
                 }
@@ -310,48 +317,30 @@
                     height: 40px;
                     position: relative;
                     z-index: 4;
-                    color: #999999;
-
-                    font-size: 9px;
-                    transition: all 0.3s ease 0s;
+                    color: #a07c4a;
+                    font-size: 20px;
+                    transition: color 0.3s ease 0s;
+                    transform: translate3d(0, 50px, 0) scale(0.5);
 
                     @media (any-hover: hover) {
                         &:hover {
-                            font-size: 20px;
-                            color: #ffffff;
+                            transform: translate3d(0, 0, 0) scale(1) !important;
+                            color: #a07c4a;
                         }
                     }
                 }
             }
         }
     }
-    @keyframes animatedBackground2 {
-        from {
-            background-size: 280%;
-        }
-        to {
-            background-size: 118%;
-        }
-    }
-}
 
-.intro-page {
-    cursor: none !important;
-    .ticker,
-    .about,
-    .footer {
-        background: #121212 !important;
-        color: #999999;
-
-        .ticker__content {
-            p {
-                color: #999999;
-            }
-        }
-
-        .contacts__flex-subtitle {
-            color: #999999 !important;
-        }
-        cursor: none !important;
-    }
+    //    ._about-image-animation {
+    // @keyframes animatedBackground2 {
+    //     from {
+    //         background-size: 280%;
+    //     }
+    //     to {
+    //         background-size: 120%;
+    //     }
+    // }
+    // }
 }

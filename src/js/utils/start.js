@@ -1,6 +1,7 @@
 import { observe } from "./gsapTo.js";
 import { observeHeader } from "./header-animation.js";
 import { TweenMax, Expo } from "gsap/gsap-core.js";
+import { observeImages } from "./intro.js";
 
 function loaded() {
     const loadingtitle = document.querySelector('.loading__screen-title');
@@ -29,7 +30,8 @@ function loaded() {
                 }, 2);
             }
         })
-    }, 3000);
+    }, 2000);
+
 }
 loaded();
 
@@ -65,8 +67,11 @@ function observeAllAnimatedElements() {
 
     observe()
     observeHeader()
+    observeImages()
 
     setTimeout(() => {
         document.querySelector('.loading__screen').remove();
     }, 1000);
+
 }
+

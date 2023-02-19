@@ -11,6 +11,7 @@ const observer = new IntersectionObserver(entries => {
                 duration: 1,
                 delay: delayValue ? delayValue : 0,
             });
+            
         }
     })
 })
