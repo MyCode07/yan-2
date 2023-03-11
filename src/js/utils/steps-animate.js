@@ -1,15 +1,13 @@
 
-import gsap from "gsap";
-
+import gsap, { registerEase } from "gsap";
 if (document.querySelector('.home-page')) {
     function menuimageOn() {
         if (window.innerWidth >= 425) {
             let navLink = gsap.utils.toArray('.show-svg');
             let imageItem = document.querySelector('.show-svg').querySelector('img');
             // let t1 = gsap.timeline();
-
             function moveImg(e) {
-                let mouseX = e.clientX + 100 + 'px',
+                let mouseX = e.clientX,
                     mouseY = e.clientY
                 let t1 = gsap.timeline();
 
@@ -55,3 +53,5 @@ if (document.querySelector('.home-page')) {
     }
     menuimageOn()
 }
+
+

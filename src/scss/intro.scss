@@ -93,7 +93,7 @@
         // .content__top-logo
 
         &-logo {
-            z-index: 1;
+            z-index: 0;
             font-size: 11px;
             color: rgba(255, 255, 255, 0.4);
             opacity: 0;
@@ -123,7 +123,7 @@
             transform: rotate(-18deg) translateX(-54%);
             top: 15%;
             left: 50%;
-            z-index: 1;
+            z-index: 4;
             @include adaptive-value("font-size", 60, 30, 1);
             font-weight: 200;
             color: red;
@@ -217,6 +217,7 @@
         // .person__block-img
 
         &-img {
+            z-index: 3;
             width: 100%;
             height: 100vh;
             background: url("../img/hero--right.jpg") no-repeat 50% 50%;
@@ -242,7 +243,7 @@
             justify-content: space-between;
             color: #a07c4a;
             position: absolute;
-            z-index: 1;
+            z-index: 5;
             max-width: 283px;
             width: 100%;
 
@@ -253,6 +254,7 @@
 
             @media (max-width: 768px) {
                 bottom: 50px;
+                color: #fff;
             }
 
             p {
@@ -270,6 +272,10 @@
                 background: #a07c4a;
                 opacity: 0.5;
                 width: 0;
+
+                @media (max-width: 768px) {
+                    background: #fff;
+                }
             }
         }
 
@@ -327,6 +333,10 @@
                             transform: translate3d(0, 0, 0) scale(1) !important;
                             color: #a07c4a;
                         }
+                    }
+
+                    @media (max-width: 768px) {
+                        color: #fff;
                     }
                 }
             }

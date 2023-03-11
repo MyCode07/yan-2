@@ -67,8 +67,11 @@ function aboutImageShow() {
         scale: 1,
         opacity: 1,
         duration: 2.5,
-       
+
     })
+
+
+
 
     gsap.to('.content__top-logo', {
         x: 0,
@@ -95,3 +98,10 @@ export function observeImages() {
     })
 }
 
+let line = document.querySelector('.line');
+gsap.to(line, {
+    x: 0,
+    duration: 2,
+    opacity: 1,
+    delay: 8
+})

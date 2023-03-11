@@ -2,6 +2,7 @@ import { observe } from "./gsapTo.js";
 import { observeHeader } from "./header-animation.js";
 import { TweenMax, Expo } from "gsap/gsap-core.js";
 import { observeImages } from "./intro.js";
+import { fibonachii } from "./fibonacci.js";
 
 function loaded() {
     const loadingtitle = document.querySelector('.loading__screen-title');
@@ -47,6 +48,10 @@ function observeAllAnimatedElements() {
                     entry.target.style.height = 'auto';
                     i.style.transform = 'translate3d(0, 0, 0)';
                 }
+
+                setTimeout(() => {
+                    document.querySelector('.home').classList.add('_enter');
+                }, 300);
             }
         })
     })
@@ -58,6 +63,7 @@ function observeAllAnimatedElements() {
         })
     }
 
+
     const advantagesTitleWords = document.querySelectorAll('.advantages__page-content h1 span');
     if (advantagesTitleWords.length) {
         advantagesTitleWords.forEach(word => {
@@ -68,6 +74,7 @@ function observeAllAnimatedElements() {
     observe()
     observeHeader()
     observeImages()
+    fibonachii()
 
     setTimeout(() => {
         document.querySelector('.loading__screen').remove();

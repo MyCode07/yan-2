@@ -8,12 +8,12 @@ if (slides.length) {
             Pagination, EffectCoverflow
         ],
         loop: true,
-        effect: 'coverflow',
         grabCursor: true,
         centeredSlides: true,
         initialSlide: 1,
         slidesPerView: 'auto',
 
+        effect: 'coverflow',
         coverflowEffect: {
             rotate: 60,
             stretch: 0,

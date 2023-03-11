@@ -6,3 +6,5 @@ import './utils/menu.js';
 import './utils/parallax.js';
 import './utils/steps-animate.js';
 import './utils/form.js';
+import './utils/pricing.js';
+import './utils/fibonacci.js';
